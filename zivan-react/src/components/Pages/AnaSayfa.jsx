@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Spacing from '../Spacing';
 import About from '../About';
+import { formatPrice } from '../../utils/formatPrice';
 
 export default function AnaSayfa() {
   const [sliderIndex, setSliderIndex] = useState(0);
@@ -224,7 +225,7 @@ export default function AnaSayfa() {
               aria-label="Konferans davet görseli"
               role="img"
               style={{
-                backgroundImage: "url('/images/Website%20Kopyas%C4%B1.png')",
+                backgroundImage: "url('/images/Website%20Kopyas%C4%B1%20(1).png')",
               }}
             />
             <div className="ana-mobile-image-logos" aria-label="Rotaract logoları">
@@ -260,6 +261,7 @@ export default function AnaSayfa() {
               muted
               playsInline
               preload="metadata"
+              controls
               aria-label="Tanıtım videosu"
             >
               <source src="/images/tanitim_video_eski.mp4" type="video/mp4" />
@@ -321,7 +323,7 @@ Rotaract ruhunu canlı tutar ve kulüpler arası bağı güçlendirir.`}
                         <p className="small ana-paketler-desc" style={{ color: '#fff' }}>{pkg.description}</p>
                       )}
                       <div className="mb-4">
-                        <span className="h3" style={{ color: '#fff' }}>{pkg.price}</span>
+                        <span className="h3" style={{ color: '#fff' }}>{formatPrice(pkg.price)}</span>
                       </div>
                       <ul className="list-unstyled mb-4 flex-grow-1">
                         {pkg.features.map((feature, idx) => (

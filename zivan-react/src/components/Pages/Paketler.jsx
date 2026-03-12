@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { formatPrice } from '../../utils/formatPrice';
 
 export default function Paketler() {
   const packages = [
@@ -162,7 +163,7 @@ export default function Paketler() {
                     <p className="small" style={{ color: '#fff' }}>{pkg.description}</p>
                   )}
                   <div className="mb-4">
-                    <span className="h3" style={{ color: '#fff' }}>{pkg.price}</span>
+                    <span className="h3" style={{ color: '#fff' }}>{formatPrice(pkg.price)}</span>
                   </div>
                   <ul className="list-unstyled mb-4 flex-grow-1">
                     {pkg.features.map((feature, idx) => (
